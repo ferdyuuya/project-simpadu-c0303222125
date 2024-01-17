@@ -1,10 +1,11 @@
 ~<?php
 
-use App\Http\Controllers\ScheduleController;
-use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route;
+    use App\Http\Controllers\PemesananController;
+    use App\Http\Controllers\ScheduleController;
+    use App\Http\Controllers\UserController;
+    use Illuminate\Support\Facades\Route;
 
-/*
+    /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -15,18 +16,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.auth.auth-login', ['type_menu' => '']);
-});
+    Route::get('/', function () {
+        return view('pages.auth.auth-login', ['type_menu' => '']);
+    });
 
-Route::middleware(['auth'])->group(function () {
+    Route::middleware(['auth'])->group(function () {
 
-    Route::get('home', function () {
-        return view('pages.app.dashboard-simpadu', ['type_menu' => '']);
-    })->name('home');
-    Route::resource('user', UserController::class);
-    Route::resource('schedule', ScheduleController::class);
-});
+        Route::get('home', function () {
+            return view('pages.app.dashboard-simpadu', ['type_menu' => '']);
+        })->name('home');
+        Route::resource('user', UserController::class);
+        Route::resource('schedule', ScheduleController::class);
+        Route::resource('pemesanan', PemesananController::class);
+    });
+
+    // Route::get('/order', function () {
+    //     return view('pages.pemesann.index-pemesanan');
+    // });
 
 
 
