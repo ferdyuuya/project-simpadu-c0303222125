@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('no_hp');
             $table->string('alamat');
+            $table->string('kota');
             $table->string('kodepos');
             $table->string('kode_produk');
             $table->timestamps();

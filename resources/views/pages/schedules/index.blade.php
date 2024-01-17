@@ -30,14 +30,8 @@
                 <div class="row mt-4">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h4>All Schedule</h4>
-                                <div class="section-header-button">
-                                    <a href="{{ route('schedule.create') }}" class="btn btn-primary">New Schedule</a>
-                                </div>
-                            </div>
                             <div class="card-body">
-
+                                <a href="{{ route('schedule.create') }}" class="btn btn-primary">New Schedule</a>
                                 <div class="float-right">
                                     <form method="GET", action="{{ route('schedule.index') }}">
                                         <div class="input-group">
@@ -54,7 +48,6 @@
                                 <div class="table-responsive">
                                     <table class="table-striped table">
                                         <tr>
-
                                             <th>#</th>
                                             <th>Subject</th>
                                             <th>Day</th>
@@ -62,7 +55,7 @@
                                             <th>End Time</th>
                                             <th>Room</th>
                                             <th>Atendence Code</th>
-                                            <th>Action</th>x
+                                            <th>Action</th>
                                         </tr>
                                         @foreach ($schedules as $schedule)
                                             <tr>

@@ -67,33 +67,54 @@
                            </div>
                         @enderror
                      </div>
-                     <div class="form-group">
-                        <label>Alamat Lengkap</label>
-                        <input type="text"
-                           class="form-control @error('alamat')
-                           is-invalid
-                        @enderror"
-                           name="alamat">
-                        @error('alamat')
-                           <div class="invalid-feedback">
-                              {{ $message }}
+                     <div class="row">
+                        <div class="col-md-6 me-a">
+                        <div class="form-group mr-auto">
+                              <label>Alamat Lengkap</label>
+                              <input type="text"
+                                 class="form-control @error('alamat')
+                                 is-invalid
+                                 @enderror"
+                                 name="alamat">
+                                 @error('alamat')
+                              <div class="invalid-feedback">
+                                 {{ $message }}
+                              </div>
+                              @enderror
                            </div>
-                        @enderror
-                     </div>
-                     <div class="form-group">
-                        <label>Kodepos</label>
-                        <input type="text"
-                           class="form-control @error('kodepos')
-                           is-invalid
-                        @enderror"
-                           name="kodepos">
-                        @error('kodepos')
-                           <div class="invalid-feedback">
-                              {{ $message }}
+                        </div>
+                        <div class="col-md-4">
+                           <div class="form-group">
+                              <label>Kota</label>
+                              <input type="text"
+                                 class="form-control @error('kota')
+                                 is-invalid
+                              @enderror"
+                                 name="kota">
+                              @error('kota')
+                                 <div class="invalid-feedback">
+                                       {{ $message }}
+                                 </div>
+                              @enderror
                            </div>
-                        @enderror
+                        </div>
+                        <div class="col-md-2">
+                           <div class="form-group">
+                              <label>Kodepos</label>
+                              <input type="text"
+                                 class="form-control @error('kodepos')
+                                 is-invalid
+                              @enderror"
+                                 name="kodepos">
+                              @error('kodepos')
+                                 <div class="invalid-feedback">
+                                    {{ $message }}
+                                 </div>
+                              @enderror
+                           </div>
+                        </div>
                      </div>
-                     <div class="form-group">
+                     <div class="form-group mr-auto">
                         <label>Kode Produk</label>
                         <input type="text"
                            class="form-control @error('kode_produk')
@@ -108,8 +129,8 @@
                      </div>
 
                   </div>
-                  <div class="card-footer text-right">
-                     <button class="btn btn-primary">Pesan Sekarang</button>
+                  <div class="d-flex card-footer">
+                     <a href="{{ route('pemesanan.index') }}" class="btn btn-secondary mr-auto">Kembali</a>
                      <button class="btn btn-primary">Pesan Sekarang</button>
                   </div>
                </form>

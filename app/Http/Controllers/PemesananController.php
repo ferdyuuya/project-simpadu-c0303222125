@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pemesanan;
+use App\Models\Pemesanan; // Add this import statement
 use Illuminate\Http\Request;
 
 class PemesananController extends Controller
@@ -12,7 +12,7 @@ class PemesananController extends Controller
      */
     public function index()
     {
-        $pemesanan = Pemesanan::paginate(10)->withQueryString();
+        $pemesanan = Pemesanan::orderBy('id', 'desc')->paginate(10)->withQueryString();
         return view('pages.pemesanan.index-pemesanan', ['pemesanan' => $pemesanan]);
     }
 
@@ -32,14 +32,14 @@ class PemesananController extends Controller
             'email' => $request['email'],
             'no_hp' => $request['no_hp'],
             'alamat' => $request['alamat'],
+            'kota' => $request['kota'],
             'kodepos' => $request['kodepos'],
             'kode_produk' => $request['kode_produk'],
             'created_by' => $request['created_by'],
             'updated_by' => $request['updated_by']
         ]);
 
-        $pemesanan = Pemesanan::paginate(10)->withQueryString();
-        return view('pages.pemesanan.index-pemesanan', ['pemesanan' => $pemesanan]);
+        return redirect()->route('pemesanan.index');
     }
 
     /**
@@ -69,6 +69,7 @@ class PemesananController extends Controller
             'email' => $request['email'],
             'no_hp' => $request['no_hp'],
             'alamat' => $request['alamat'],
+            'kota' => $request['kota'],
             'kodepos' => $request['kodepos'],
             'kode_produk' => $request['kode_produk'],
             'updated_by' => $request['updated_by']

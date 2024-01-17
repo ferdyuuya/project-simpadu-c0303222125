@@ -8,13 +8,23 @@ use Illuminate\Database\Eloquent\Model;
 class Pemesanan extends Model
 {
     use HasFactory;
+    
+    public function subject()
+    {
+        return $this->belongsTo(Subject::class);
+    }
 
+    public function student()
+    {
+        return $this->belongsTo(User::class);
+    }
     protected $fillable = [
         'id',
         'nama_lengkap',
         'email',
         'no_hp',
         'alamat',
+        'kota',
         'kodepos',
         'kode_produk',
         'created_at',
