@@ -23,7 +23,8 @@ class PemesananFactory extends Factory
             'alamat' => $this->faker->address,
             'kota' => $this->faker->city,
             'kodepos' => $this->faker->numberBetween(10110, 99986),
-            'kode_produk' => $this->faker->unique()->regexify('INV/' . $this->faker->date('Ymd') . '/MPL/' . $this->faker->numberBetween(10500, 43499)),
+            // 'kode_produk' => $this->faker->unique()->regexify('INV/' . $this->faker->date('Ymd') . '/MPL/' . $this->faker->numberBetween(10500, 43499)),
+            'produk_id' => \App\Models\Produk::pluck('id')->random(),
         ];
     }
 }

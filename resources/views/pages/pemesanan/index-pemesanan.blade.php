@@ -78,7 +78,8 @@
                                                     {{ $pesan->kodepos }}
                                                 </td>
                                                 <td>
-                                                    {{ $pesan->kode_produk }}
+                                                    {{ $pesan->nama_produk }}
+                                                </td>
                                                 </td>
                                                 <td>
                                                     <div class="d-flex justify-content-center">

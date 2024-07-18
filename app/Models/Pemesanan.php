@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pemesanan extends Model
 {
     use HasFactory;
-    
+
     public function subject()
     {
         return $this->belongsTo(Subject::class);
@@ -26,8 +26,13 @@ class Pemesanan extends Model
         'alamat',
         'kota',
         'kodepos',
-        'kode_produk',
+        'produk_id',
         'created_at',
         'updated_at',
     ];
+
+    public function produk()
+    {
+        return $this->belongsTo(Produk::class);
+    }
 }

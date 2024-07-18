@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('alamat');
             $table->string('kota');
             $table->string('kodepos');
-            $table->string('kode_produk');
+            $table->unsignedBigInteger('produk_id');
+            // $table->foreign('id_produk')->references('id')->on('produks');
             $table->timestamps();
         });
     }
